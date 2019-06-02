@@ -39,14 +39,14 @@ public class MainProblema {
 		
 		// Criando Atendente
 		Atendente atendente = new Atendente("Maria das Dores", "123.456.999-88", 1515);
-		System.out.println("\n\n\n====== Cadastor de Atendente ====== ");
+		System.out.println("\n\n\n====== Cadastro de Atendente ====== ");
 		System.out.println(atendente.toString());
 
 		
 
 		// Inicia o atendimento		
 		Atendimento atendimento = new Atendimento(cliente, atendente);
-		atendimento.realizarInteracao(new LogAtendimento(new Date(), atendente, "Primeito Atendimento."));
+		atendimento.realizarInteracao(new LogAtendimento(new Date(), atendente, "Primeiro Atendimento."));
 		atendimento.setDataAlvo(new Date());
 		// Cria OS
 		atendimento.atualizarSituacao(Situacao.EM_ANDAMENTO, new LogAtendimento(new Date(), atendente, "Solicitação de Limpeza. Necessario visita tecnica."));
@@ -68,12 +68,12 @@ public class MainProblema {
 		
 		
 		// Resolver OS/Atendimento
-		atendimento.utilizarEquipamento(new Equipamento("Pastar Termica"));
+		atendimento.utilizarEquipamento(new Equipamento("Pasta Termica"));
 		atendimento.utilizarEquipamento(new Equipamento("Chaves de Fenda"));
-		atendimento.utilizarEquipamento(new Equipamento("Parafuso"));
+		atendimento.utilizarEquipamento(new Equipamento("Parafusos"));
 		atendimento.getOcorrencia().atualizarSituacao(Situacao.RESOLVIDO);
 		atendimento.realizarInteracao(new LogAtendimento(new Date(), tecnico, "Realizado limpeza em todos os componentes do computador."));
-		atendimento.atualizarSituacao(Situacao.RESOLVIDO, new LogAtendimento(new Date(), atendente, "Tecnico realizou operacao solicitada."));
+		atendimento.atualizarSituacao(Situacao.RESOLVIDO, new LogAtendimento(new Date(), atendente, "Tecnico realizou operação solicitada."));
 		System.out.println("\n\n\n====== Resolver OS ====== ");
 		System.out.println(atendimento.toString());
 		
